@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>I pronomi indefiniti | The Language Hub</title>
+<style>
+:root{--navy:#20334b;--teal:#4d8985;--mint:#edf6f3;--ink:#263746;--muted:#647484;--line:#dce5e9;--gold:#f1ca70}
+*{box-sizing:border-box}body{margin:0;background:#fbfcfd;color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif}
+header{background:var(--navy);color:#fff;padding:28px max(22px,calc((100% - 1050px)/2)) 30px}
+.brand{font-size:13px;letter-spacing:.16em;font-weight:bold;color:#c9e1df}h1{font-size:clamp(30px,5vw,44px);margin:10px 0 6px;line-height:1.12}header p{margin:0;max-width:760px}
+main{max-width:1050px;margin:26px auto;padding:0 18px 50px}.intro{background:var(--mint);border:1px solid #d5e8e2;border-radius:14px;padding:16px 18px;margin-bottom:20px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 14px}.tab{white-space:nowrap;border:1px solid var(--line);border-radius:30px;background:white;padding:10px 16px;font-size:16px;font-weight:bold;color:var(--navy);cursor:pointer}
+.tab.active{background:var(--teal);color:white;border-color:var(--teal)}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;min-height:160px;box-shadow:0 5px 18px #20334b0a}
+h2{color:var(--navy);margin:0 0 5px;font-size:24px}.sub{color:var(--muted);margin:0 0 18px}.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.col{border:1px solid var(--line);border-radius:12px;padding:15px}.col h3{color:var(--teal);margin:0 0 10px}.col p{margin:7px 0}.pill{display:inline-block;background:#edf4f6;border-radius:7px;padding:3px 8px;margin:3px 3px 3px 0;font-weight:bold}
+.note,.reading{background:#fff9eb;border-left:4px solid var(--gold);border-radius:8px;padding:13px 15px;margin-top:16px}
+.hidden{display:none!important}.question{font-size:19px;font-weight:bold;margin:18px 0 12px}.choices{display:flex;flex-wrap:wrap;gap:9px}.choice{border:1px solid var(--line);background:white;padding:10px 14px;border-radius:9px;cursor:pointer;font:inherit}.choice:hover{background:var(--mint)}
+button:focus,textarea:focus,input:focus{outline:3px solid var(--gold);outline-offset:2px}.action{background:var(--teal);border:0;color:white;border-radius:9px;padding:10px 15px;font-weight:bold;cursor:pointer;margin:12px 8px 0 0}
+.feedback{margin-top:13px;padding:11px 13px;border-radius:9px;background:var(--mint);display:none}.feedback.show{display:block}.good{color:#216746}.bad{color:#9c3e3e}
+textarea,input{font:inherit;border:1px solid var(--line);border-radius:9px;padding:11px;width:100%;max-width:100%}textarea{min-height:85px}.small{color:var(--muted);font-size:14px}
+@media(max-width:700px){.matrix{grid-template-columns:1fr}.panel{padding:16px}}
+</style></head>
+<body>
+<header><div class="brand">THE LANGUAGE HUB · ITALIAN</div><h1>I pronomi indefiniti</h1><p>Qualcuno, nessuno, tutti, qualcosa… Impara a scegliere la parola giusta in base a persone, luoghi e cose.</p></header>
+<main>
+<div class="intro"><b>Come usare questa attività:</b> osserva la matrice, poi passa alle attività per riconoscere, scegliere e usare i pronomi indefiniti in contesto.</div>
+<nav class="tabs" aria-label="Attività">
+<button class="tab active" data-target="matrix">Matrice</button><button class="tab" data-target="sort">1 · Classifica</button><button class="tab" data-target="choose">2 · Scegli</button><button class="tab" data-target="translate">3 · Traduci</button><button class="tab" data-target="complete">4 · Completa</button><button class="tab" data-target="speak">5 · Parla</button><button class="tab" data-target="read">6 · Leggi</button>
+</nav>
+<section class="panel" id="matrix">
+<h2>La matrice</h2><p class="sub">Organizza le parole secondo il significato: EVERY, SOME oppure NO.</p>
+<div class="matrix">
+<div class="col"><h3>EVERY · tutto / tutti</h3><p><b>Persone</b><br><span class="pill">tutti</span><span class="pill">ognuno</span></p><p><b>Luoghi</b><br><span class="pill">ovunque</span><span class="pill">dappertutto</span></p><p><b>Cose</b><br><span class="pill">tutto</span></p></div>
+<div class="col"><h3>SOME · qualche / alcuni</h3><p><b>Persone</b><br><span class="pill">qualcuno</span></p><p><b>Luoghi</b><br><span class="pill">da qualche parte</span></p><p><b>Cose</b><br><span class="pill">qualcosa</span></p></div>
+<div class="col"><h3>NO · nessun / niente</h3><p><b>Persone</b><br><span class="pill">nessuno</span></p><p><b>Luoghi</b><br><span class="pill">da nessuna parte</span></p><p><b>Cose</b><br><span class="pill">niente</span><span class="pill">nulla</span></p></div>
+</div><div class="note"><b>Attenzione alla doppia negazione!</b><br>Quando <i>nessuno</i>, <i>niente</i> o <i>da nessuna parte</i> seguono il verbo, normalmente usiamo anche <b>non</b>: “Non vedo nessuno”; “Non ho comprato niente”; “Non vado da nessuna parte”.</div>
+</section>
+<section class="panel hidden" id="sort"><h2>1 · Classifica</h2><p class="sub">Per ogni parola, scegli la categoria corretta.</p><div id="sortQ"></div><div id="sortFb" class="feedback"></div><button class="action" id="sortNext">Avanti</button><p class="small" id="sortCount"></p></section>
+<section class="panel hidden" id="choose"><h2>2 · Scegli la parola giusta</h2><p class="sub">Leggi la frase e seleziona la risposta più naturale.</p><div id="quizQ"></div><div id="quizFb" class="feedback"></div><button class="action" id="quizNext">Prossima frase</button><p class="small" id="quizCount"></p></section>
+<section class="panel hidden" id="translate"><h2>3 · Traduci in italiano</h2><p class="sub">Traduci le frasi e poi confronta la tua risposta con un possibile modello.</p><div class="question" id="transQ"></div><textarea id="transInput" placeholder="Scrivi la tua traduzione…"></textarea><br><button class="action" id="transShow">Mostra una possibile traduzione</button><button class="action" id="transNext">Prossima</button><div id="transFb" class="feedback"></div><p class="small" id="transCount"></p></section>
+<section class="panel hidden" id="complete"><h2>4 · Completa le frasi</h2><p class="sub">Inserisci la parola o espressione mancante.</p><div class="question" id="fillQ"></div><input id="fillInput" placeholder="Scrivi la parola mancante"><br><button class="action" id="fillCheck">Controlla</button><button class="action" id="fillNext">Avanti</button><div id="fillFb" class="feedback"></div><p class="small" id="fillCount"></p></section>
+<section class="panel hidden" id="speak"><h2>5 · Parla!</h2><p class="sub">Rispondi ad alta voce usando almeno un pronome indefinito in ogni risposta.</p><ol><li>Hai qualcuno in famiglia che parla più di una lingua?</li><li>C'è qualcosa che vorresti imparare quest'anno?</li><li>Vai spesso da qualche parte nel fine settimana?</li><li>Conosci tutti i tuoi vicini?</li><li>Quando sei in vacanza, ti piace visitare tutto o preferisci rilassarti?</li><li>C'è qualcosa che non mangeresti mai?</li></ol><p class="small">Suggerimento: prova a dare risposte complete e ad aggiungere una spiegazione.</p><textarea placeholder="Puoi annotare qui le tue idee…"></textarea></section>
+<section class="panel hidden" id="read"><h2>6 · Leggi e comprendi</h2><p class="sub">Leggi il testo e rispondi alle domande.</p><div class="reading">Sabato scorso siamo andati in centro. C'erano tantissime persone: <b>tutti</b> sembravano contenti di stare fuori. Volevamo trovare <b>qualcosa</b> da mangiare, ma non c'era <b>nessun</b> tavolo libero. Abbiamo camminato <b>dappertutto</b> per cercare un posto tranquillo, ma non abbiamo trovato <b>niente</b>. Alla fine <b>qualcuno</b> ci ha consigliato un piccolo ristorante in una strada laterale. Non conoscevamo <b>nessuno</b>, ma il proprietario è stato molto gentile.</div><div class="question">1. Che cosa cercavano i protagonisti?</div><div class="choices" id="readChoices"><button class="choice" data-correct="yes">Un posto dove mangiare</button><button class="choice">Un albergo</button><button class="choice">Un negozio</button></div><div id="readFb" class="feedback"></div><div class="question">2. Chi ha consigliato loro un ristorante?</div><textarea placeholder="Rispondi con una frase completa…"></textarea></section>
+</main>
+<script>
+(function(){
+const tabs=document.querySelectorAll('.tab');
+tabs.forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.panel').forEach(p=>p.classList.add('hidden'));
+ document.getElementById(btn.dataset.target).classList.remove('hidden');
+ tabs.forEach(t=>t.classList.toggle('active',t===btn));
+}));
+function fb(id,msg,ok){const e=document.getElementById(id);e.textContent=msg;e.className='feedback show '+(ok?'good':'bad')}
+const sorting=[['qualcuno','SOME'],['nessuno','NO'],['tutto','EVERY'],['ovunque','EVERY'],['qualcosa','SOME'],['da nessuna parte','NO'],['ognuno','EVERY'],['niente','NO']];
+let si=0;function drawSort(){let x=sorting[si];document.getElementById('sortQ').innerHTML='<div class="question">'+x[0]+'</div><div class="choices">'+['EVERY','SOME','NO'].map(v=>'<button class="choice" data-v="'+v+'">'+v+'</button>').join('')+'</div>';document.getElementById('sortFb').className='feedback';document.getElementById('sortCount').textContent=(si+1)+' di '+sorting.length;document.querySelectorAll('#sortQ button').forEach(b=>b.onclick=()=>fb('sortFb',b.dataset.v===x[1]?'Corretto!':'Non proprio: la categoria è '+x[1]+'.',b.dataset.v===x[1]));}
+document.getElementById('sortNext').onclick=()=>{si=(si+1)%sorting.length;drawSort()};drawSort();
+const quiz=[['Non conosco ____ in questa città.',['nessuno','qualcuno','tutti'],0,'La frase è negativa: “Non conosco nessuno”.'],['Hai ____ da bere?',['qualcosa','niente','ovunque'],0,'“Qualcosa” è naturale in questa domanda.'],['Ieri ho cercato le chiavi ____, ma non le ho trovate.',['dappertutto','qualcuno','tutto'],0,'“Dappertutto” significa in ogni luogo.'],['____ può imparare una lingua con la pratica.',['Ognuno','Niente','Da nessuna parte'],0,'“Ognuno” si riferisce a ogni persona.'],['Non c’è ____ nel frigorifero.',['niente','qualcuno','tutti'],0,'“Non c’è niente” è una doppia negazione corretta.'],['C’è ____ che vuole parlare con te.',['qualcuno','nessuno','ovunque'],0,'“Qualcuno” indica una persona non specificata.']];
+let qi=0;function drawQuiz(){let q=quiz[qi];document.getElementById('quizQ').innerHTML='<div class="question">'+q[0]+'</div><div class="choices">'+q[1].map((v,i)=>'<button class="choice" data-i="'+i+'">'+v+'</button>').join('')+'</div>';document.getElementById('quizFb').className='feedback';document.getElementById('quizCount').textContent=(qi+1)+' di '+quiz.length;document.querySelectorAll('#quizQ button').forEach(b=>b.onclick=()=>fb('quizFb',(Number(b.dataset.i)===q[2]?'Corretto! ':'Risposta: '+q[1][q[2]]+'. ')+q[3],Number(b.dataset.i)===q[2]));}
+document.getElementById('quizNext').onclick=()=>{qi=(qi+1)%quiz.length;drawQuiz()};drawQuiz();
+const trans=[['Everybody knows the answer.','Tutti conoscono la risposta.'],['I would like something to eat.','Vorrei qualcosa da mangiare.'],['I didn’t see anybody.','Non ho visto nessuno.'],['We looked everywhere.','Abbiamo cercato dappertutto.'],['Nobody is at home.','Non c’è nessuno a casa.']];let ti=0;
+function drawTrans(){document.getElementById('transQ').textContent=trans[ti][0];document.getElementById('transInput').value='';document.getElementById('transFb').className='feedback';document.getElementById('transCount').textContent=(ti+1)+' di '+trans.length}
+document.getElementById('transShow').onclick=()=>fb('transFb','Possibile traduzione: '+trans[ti][1],true);document.getElementById('transNext').onclick=()=>{ti=(ti+1)%trans.length;drawTrans()};drawTrans();
+const fills=[['Non ho visto ____ al supermercato.','nessuno'],['Vorrei ____ di caldo da bere.','qualcosa'],['I bambini giocano ____ nel giardino.','dappertutto'],['____ ha una storia da raccontare.','ognuno'],['Non voglio andare ____ stasera.','da nessuna parte']];let fi=0;
+function drawFill(){document.getElementById('fillQ').textContent=fills[fi][0];document.getElementById('fillInput').value='';document.getElementById('fillFb').className='feedback';document.getElementById('fillCount').textContent=(fi+1)+' di '+fills.length}
+document.getElementById('fillCheck').onclick=()=>{let v=document.getElementById('fillInput').value.trim().toLowerCase();fb('fillFb',v===fills[fi][1]?'Perfetto!':'La risposta attesa è: '+fills[fi][1]+'.',v===fills[fi][1])};document.getElementById('fillNext').onclick=()=>{fi=(fi+1)%fills.length;drawFill()};drawFill();
+document.querySelectorAll('#readChoices button').forEach(b=>b.onclick=()=>fb('readFb',b.dataset.correct?'Esatto!':'Riprova: rileggi il testo.',b.dataset.correct==='yes'));
+})();
+</script></body></html>
